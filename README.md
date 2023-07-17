@@ -47,7 +47,8 @@ Do not stop the engine before this, or it will reverse when it stops
 License of source code:
 LGPL v3 (see file LICENSE) 
 
-License of media (textures and sounds):
+License of media (textures, models and sounds):
 CC0
+https://creativecommons.org/publicdomain/zero/1.0/
 
 
