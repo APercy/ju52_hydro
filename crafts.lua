@@ -21,15 +21,16 @@ minetest.register_craftitem("ju52_hydro:ju52", {
         --local nodedef = minetest.registered_nodes[node_below]
         
 		pointed_pos.y=pointed_pos.y+4.0
-		local new_ju52 = minetest.add_entity(pointed_pos, "ju52_hydro:ju52")
-		if new_ju52 and placer then
-            local ent = new_ju52:get_luaentity()
-            local owner = placer:get_player_name()
-            ent.owner = owner
-			new_ju52:set_yaw(placer:get_look_horizontal())
-			itemstack:take_item()
-            ent.object:set_acceleration({x=0,y=airutils.gravity,z=0})
-            airutils.create_inventory(ent, ent._trunk_slots, owner)
+		local sc_ent = minetest.add_entity(pointed_pos, "ju52_hydro:ju52")
+		if sc_ent and placer then
+            local ent = sc_ent:get_luaentity()
+            if ent then
+                local owner = placer:get_player_name()
+                ent.owner = owner
+			    sc_ent:set_yaw(placer:get_look_horizontal())
+			    itemstack:take_item()
+                airutils.create_inventory(ent, ent._trunk_slots, owner)
+            end
 		end
 
 		return itemstack
