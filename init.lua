@@ -41,6 +41,7 @@ ju52_hydro.plane_properties._destroy_parts_method = ju52_hydro.destroy_parts_met
 ju52_hydro.plane_properties.initial_properties = airutils.properties_copy(ju52.plane_properties.initial_properties)
 ju52_hydro.plane_properties.initial_properties.collisionbox = {-1.2, -3.31, -1.2, 1.2, 1, 1.2}
 ju52_hydro.plane_properties.initial_properties.selectionbox = {-5, -3.31, -5, 5, 1, 5}
+ju52_hydro.plane_properties._splash_x_position = 22
 
 dofile(minetest.get_modpath("ju52_hydro") .. DIR_DELIM .. "crafts.lua")
 dofile(minetest.get_modpath("ju52_hydro") .. DIR_DELIM .. "entities.lua")
