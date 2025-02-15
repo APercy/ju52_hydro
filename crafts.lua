@@ -41,27 +41,19 @@ minetest.register_craftitem("ju52_hydro:ju52", {
 -- crafting
 --
 if not minetest.settings:get_bool('ju52.disable_craftitems') and minetest.get_modpath("default") then
-	--[[minetest.register_craft({
-		output = "ju52:wings",
+	minetest.register_craft({
+		output = "ju52_hydro:floaters",
 		recipe = {
-			{"wool:white", "farming:string", "wool:white"},
-			{"group:wood", "group:wood", "group:wood"},
-			{"wool:white", "farming:string", "wool:white"},
+			{"" , "default:steel_ingot", "" },
+			{"default:tin_ingot", "default:steel_ingot", "default:tin_ingot"},
+			{"default:tin_ingot", "default:tin_ingot",   ""},
 		}
 	})
 	minetest.register_craft({
-		output = "ju52:body",
+		output = "ju52_hydro:ju52",
 		recipe = {
-			{"default:steel_ingot", "default:mese_block", "default:steel_ingot"},
-			{"group:wood", "group:wood", "group:wood"},
-			{"default:steel_ingot", "group:wood",   "default:steel_ingot"},
+			{"ju52:ju52",},
+			{"ju52_hydro:floaters",},
 		}
 	})
-	minetest.register_craft({
-		output = "ju52:ju52",
-		recipe = {
-			{"ju52:wings",},
-			{"ju52:body",},
-		}
-	})]]--
 end
