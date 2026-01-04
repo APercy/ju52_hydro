@@ -1,7 +1,12 @@
 ju52_hydro={}
 
+dofile(minetest.get_modpath("ju52") .. DIR_DELIM .. "forms.lua")
+dofile(minetest.get_modpath("ju52") .. DIR_DELIM .. "walk_map.lua")
+
 function ju52_hydro.register_parts_method(self)
     --self._skin = self._vehicle_custom_data._skin
+    --initialize positions
+    ju52.initialize(self)
 
     local pos = self.object:get_pos()
 
