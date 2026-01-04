@@ -14,6 +14,10 @@ function ju52_hydro.register_parts_method(self)
     self.wheels = wheels
     airutils.add_paintable_part(self, self.wheels)
 
+    local cabin = minetest.add_entity(pos,'ju52:cabin_interactor')
+    cabin:set_attach(self.object,'',{x=0,y=0,z=40},{x=0,y=0,z=0})
+    self.cabin = cabin
+
     --self.object:set_bone_position("aileron_base_r", {x=93.7994, y=3.35, z=-15.3002}, {x=180, y=-7.45, z=5.3})
     --self.object:set_bone_position("aileron_base_l", {x=-93.7994, y=3.35, z=-15.3002}, {x=180, y=7.54, z=-5.3})
 
@@ -42,7 +46,7 @@ ju52_hydro.plane_properties._register_parts_method = ju52_hydro.register_parts_m
 ju52_hydro.plane_properties._destroy_parts_method = ju52_hydro.destroy_parts_method
 ju52_hydro.plane_properties.initial_properties = airutils.properties_copy(ju52.plane_properties.initial_properties)
 ju52_hydro.plane_properties.initial_properties.collisionbox = {-1.2, -3.31, -1.2, 1.2, 1, 1.2}
-ju52_hydro.plane_properties.initial_properties.selectionbox = {-5, -3.31, -5, 5, 1, 5}
+ju52_hydro.plane_properties.initial_properties.selectionbox = {-5, -3.31, -5, 5, 0, 5}
 ju52_hydro.plane_properties._splash_x_position = 22
 
 dofile(minetest.get_modpath("ju52_hydro") .. DIR_DELIM .. "crafts.lua")
